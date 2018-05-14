@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="horizontal"
+
     android:foreground="?selectableItemBackground"
     >
 
   <TextView
       android:id="@+id/titlelEl"
+
       android:layout_width="match_parent"
       android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:background="@color/colorPrimary"
       android:gravity="center"
       android:text="title" />
 
@@ -17,12 +22,14 @@
   <TextView
       android:id="@+id/bodyEl"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
+      android:layout_height="match_parent"
       android:layout_gravity="bottom"
+      android:layout_weight="1"
+      android:background="@color/colorAccent"
       android:ellipsize="end"
       android:lines="1"
       android:padding="4dp"
       android:text="body"
       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
       tools:text="Lorem ipsum dolor sit amet" />
-</FrameLayout>
+</LinearLayout>
