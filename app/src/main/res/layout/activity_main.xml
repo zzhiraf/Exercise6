@@ -38,6 +38,18 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="113dp" />
 
+    <Button
+        android:id="@+id/buttondel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Delete all"
+        android:onClick="onClickdel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="113dp" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"

@@ -9,13 +9,19 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public  class OurAdapter extends RecyclerView.Adapter<OurAdapter.ViewHolder> {
-    private ArrayList<NoteClass> mDataSource;
 
-    public OurAdapter(ArrayList<NoteClass> dataSources) {
+public  class OurAdapter extends RecyclerView.Adapter<OurAdapter.ViewHolder> {
+    private List<Note> mDataSource;
+   // private final NotesAdapterInteraction mListener;
+
+    public OurAdapter(List<Note> dataSources) {
         mDataSource = dataSources;
     }
 
+    public void updateList(ArrayList<Note> updatedList) {
+        mDataSource = updatedList;
+        notifyDataSetChanged();
+    }
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -48,11 +54,11 @@ public  class OurAdapter extends RecyclerView.Adapter<OurAdapter.ViewHolder> {
     //Заполним содержимое
     public void onBindViewHolder(ViewHolder holder, final int position) {
         // get our custom object from our dataset at this position
-        final NoteClass noteClass = mDataSource.get(position);
+        final Note note = mDataSource.get(position);
 
         // Bind our views with our data!
-        holder.title.setText(noteClass.getTitle());
-        holder.body.setText(noteClass.getBody());
+        holder.title.setText(note.getTitle());
+        holder.body.setText(note.getBody());
 
     }
 
@@ -61,6 +67,10 @@ public  class OurAdapter extends RecyclerView.Adapter<OurAdapter.ViewHolder> {
         super.onAttachedToRecyclerView(recyclerView);
     }
 
+    public void updateList(List<Note> updatedList) {
+        mDataSource = updatedList;
+        notifyDataSetChanged();
+    }
 
 
 }
